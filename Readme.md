@@ -3,22 +3,19 @@ Uniplaces Pagination Bundle for Symfony2
 
 ### Instalation:
 
-Add to .gitmodules:
+Add the submodule:
 
 ```
-[submodule "vendor/bundles/Uniplaces/PaginationBundle"]
-	path = vendor/bundles/Uniplaces/PaginationBundle
-	url = git://github.com/uniplaces/pagination.git
+git submodule add git://github.com/uniplaces/PaginationBundle.git vendor/bundles/Uniplaces/PaginationBundle
 ```
 
-Then run:
+Register the namespace in app/autoload.php:
 
 ```
-git submodule init
-git submodule update
+'Uniplaces'        => __DIR__.'/../vendor/bundles',
 ```
 
-And finally add this line to the bundles list in AppKernel.php:
+And finally add load the budle in the bundles list in app/AppKernel.php:
 
 ```
 new Uniplaces\PaginationBundle\UniplacesPaginationBundle()
