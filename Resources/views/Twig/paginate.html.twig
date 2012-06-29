@@ -12,7 +12,7 @@
 
 {% block paginate_previous %}
     {% if pages.previous|default(false) %}
-        <li><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pages.previous }|merge(routeParameters)) }}">&lt;&nbsp;{{ 'uniplaces.pagination.previous'|trans }}</a></li>
+        <li><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pages.previous }|merge(routeParameters)) }}" class="pagination-previous">&lt;&nbsp;{{ 'uniplaces.pagination.previous'|trans }}</a></li>
     {% else %}
         <li><span>&lt;&nbsp;{{ 'uniplaces.pagination.previous'|trans }}</span></li>
     {% endif %}
@@ -20,7 +20,7 @@
 
 {% block paginate_next %}
     {% if pages.next|default(false) %}
-        <li><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pages.next }|merge(routeParameters)) }}">{{ 'uniplaces.pagination.next'|trans }}&nbsp;&gt;</a></li>
+        <li><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pages.next }|merge(routeParameters)) }}" class="pagination-next">{{ 'uniplaces.pagination.next'|trans }}&nbsp;&gt;</a></li>
     {% else %}
         <li><span>{{ 'uniplaces.pagination.next'|trans }}&nbsp;&gt;</span></li>
     {% endif %}
@@ -28,7 +28,7 @@
 
 {% block paginate_first %}
     {% if pages.previous|default(false) %}
-        <li><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pages.first }|merge(routeParameters)) }}">&lt;&lt;&nbsp;{{ 'uniplaces.pagination.first'|trans }}</a></li>
+        <li><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pages.first }|merge(routeParameters)) }}" class="pagination-first">&lt;&lt;&nbsp;{{ 'uniplaces.pagination.first'|trans }}</a></li>
     {% else %}
         <li><span>&lt;&lt;&nbsp;{{ 'uniplaces.pagination.first'|trans }}</span></li>
     {% endif %}
@@ -36,7 +36,7 @@
 
 {% block paginate_last %}
     {% if pages.next|default(false) %}
-        <li><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pages.last }|merge(routeParameters)) }}">{{ 'uniplaces.pagination.last'|trans }}&nbsp;&gt;&gt;</a></li>
+        <li><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pages.last }|merge(routeParameters)) }}" class="pagination-last">{{ 'uniplaces.pagination.last'|trans }}&nbsp;&gt;&gt;</a></li>
     {% else %}
         <li><span>{{ 'uniplaces.pagination.last'|trans }}&nbsp;&gt;&gt;</span></li>
     {% endif %}
@@ -67,6 +67,6 @@
     {% endif %}
 
     {% for pageNumber in range(lowerBound, upperBound) %}
-        <li {% if pageNumber == pages.current %}class="active"{% endif %}><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pageNumber }|merge(routeParameters)) }}">{{ pageNumber }}</a></li>
+        <li {% if pageNumber == pages.current %}class="active"{% endif %}><a href="{{ path(route, {(paginator.getPageRouteParameterKey): pageNumber }|merge(routeParameters)) }}" class="pagination-number">{{ pageNumber }}</a></li>
     {% endfor %}
 {% endblock paginate_pages %}
