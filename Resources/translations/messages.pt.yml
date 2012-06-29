@@ -1,0 +1,6 @@
+uniplaces:
+    pagination:
+        next: Próxima
+        previous: Anterior
+        first: Primeira
+        last: Última

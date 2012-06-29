@@ -34,5 +34,12 @@ class UniplacesPaginationExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
+        //Add the default template to the template array
+        $templates =  array('UniplacesPaginationBundle:Twig:paginate.html.twig');
+        if (isset($config['template'])) {
+            //Add any overriding template if defined in the configuration
+            $templates[] = $config['template'];
+        }
+        $container->setParameter('uniplaces_pagination.templates', $templates);
     }
 }

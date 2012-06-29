@@ -29,6 +29,12 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('uniplaces_pagination');
 
+        $rootNode
+            ->children()
+                ->scalarNode('template')->end()
+            ->end()
+        ;
+
         return $treeBuilder;
     }
 }

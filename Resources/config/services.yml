@@ -1,3 +1,10 @@
 parameters:
+    uniplaces_pagination.twig.extension.class: Uniplaces\PaginationBundle\Extension\Twig\PaginateTwigExtension
 
 services:
+    uniplaces_pagination.twig.extension:
+        class: %uniplaces_pagination.twig.extension.class%
+        arguments:
+            - %uniplaces_pagination.templates%
+        tags:
+            - { name: twig.extension }
