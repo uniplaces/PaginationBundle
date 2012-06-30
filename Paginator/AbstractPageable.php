@@ -30,16 +30,6 @@ abstract class AbstractPageable implements PageableInterface
     /**
      * {@inheritdoc }
      */
-    abstract public function getItems($offset, $itemCountPerPage);
-
-    /**
-     * {@inheritdoc }
-     */
-    abstract public function count();
-
-    /**
-     * {@inheritdoc }
-     */
     public function getPageRouteParameterKey() {
         return $this->pageRouteParameterKey;
     }
