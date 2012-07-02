@@ -41,6 +41,6 @@ class MongoDoctrinePageable extends AbstractPageable
 
     public function count()
     {
-        return $this->query->count();
+        return $this->query->getQuery()->count();
     }
 }
