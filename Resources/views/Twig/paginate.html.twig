@@ -46,8 +46,11 @@
     {% set pagesRange = 7 %}
     {% set delta = 3 %}
 
-    {# maximum number of pages is less then pages to show #}
-    {% if pages.pageCount <= pagesRange %}
+    {% if pages.pageCount == 0 %}
+        {% set lowerBound = 1 %}
+        {% set upperBound = 1 %}
+    {% elseif pages.pageCount <= pagesRange %}
+        {# maximum number of pages is less then pages to show #}
         {% set lowerBound = 1 %}
         {% set upperBound = pages.pageCount %}
     {% else %}
